@@ -1,0 +1,28 @@
+package capgemini.day9;
+import java.util.Scanner;
+
+
+interface concattwostrings{
+	public void combinetwostr(String s1,String S2);
+}
+
+
+public class MorelambdaPrograms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String1");
+		String s3 = sc.next();
+		System.out.println("Enter String2");
+		String S4 = sc.next();
+		
+		concattwostrings combine = (x1,x2)->{
+			System.out.println("After Combining two Strings "+x1.concat(x2));
+		};
+		combine.combinetwostr(s3, S4);
+		
+
+	}
+
+}

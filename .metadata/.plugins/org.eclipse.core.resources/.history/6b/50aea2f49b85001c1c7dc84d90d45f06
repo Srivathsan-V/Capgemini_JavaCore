@@ -1,0 +1,26 @@
+package capgemini.day5;
+import java.util.Scanner;
+//Write a program to remove characters from a string
+
+public class Removecharactersfromstring {
+
+	public static void main(String[] args) {
+		//variable names should start with lowercase letters
+		StringBuilder s1 =new StringBuilder("India India");
+		char s2 = 'a';
+		Scanner sc = new Scanner(System.in);
+		char[] ch =new char[10];
+		//ch = s1.chars();
+		String s3 = sc.next();
+		ch = s3.toCharArray();
+		sc.close();
+		
+		for(int i =0;i<s1.length();i++) {
+			if(s1.charAt(i) == s2) {
+				s1.deleteCharAt(i);
+			}
+		}
+		System.out.println("After removing the words: " +s1);
+	}
+
+}

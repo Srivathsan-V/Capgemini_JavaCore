@@ -1,0 +1,10 @@
+package capgemini.day8;
+
+public class Myset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

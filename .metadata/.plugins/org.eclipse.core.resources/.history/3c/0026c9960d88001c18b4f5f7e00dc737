@@ -1,0 +1,25 @@
+package capgemini.day8;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Mymap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<Integer,String> map = new HashMap<Integer,String>();
+		map.put(101, "Srivathsan");
+		map.put(102, "Tom");
+		map.put(103, "Lewis");
+		map.put(104, "Deep");
+		map.put(105, "Dorcy");
+		map.put(106, "Alec");
+		
+		//printing the map objects
+		System.out.println(map);
+		
+		
+
+	}
+
+}
