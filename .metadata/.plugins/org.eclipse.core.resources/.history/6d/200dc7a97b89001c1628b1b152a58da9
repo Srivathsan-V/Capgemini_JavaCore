@@ -1,0 +1,10 @@
+package capgemini.day9;
+
+public class Idcomparator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

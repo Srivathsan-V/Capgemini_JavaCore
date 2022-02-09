@@ -1,10 +1,6 @@
 package capgemini.day4;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Scanner;
 //Employee Management System
-
 //Add the List of Employee
 //Find the Employee By name
 //Sort the Employee List
@@ -61,7 +57,7 @@ class EmployeeM {
 	private int salary;
 }
 
-	public static class Employeemanagementsystem {
+	public class Employeemanagementsystem {
 
 		public static void main(String arg[]) {
 
@@ -75,9 +71,9 @@ class EmployeeM {
 				System.out.println("Enter 3 for search employee");
 				System.out.println("Enter 4 for delete a employee");
 				System.out.println("Enter 6 Sort the Employee ASC BY Name");
-				System.out.println("Enter 7 Sort the Employee ASC By Name");
+				System.out.println("Enter 7 Sort the Employee DESC By Name");
 				System.out.println("Enter 8 Sort the Employee ASC BY Salary");
-				System.out.println("Enter 9 Sort the Employee ASC By Salary");
+				System.out.println("Enter 9 Sort the Employee DESC By Salary");
 				System.out.println("Enter 10 Minimun paid salary employee");
 				System.out.println("Enter 11 maximum salry of employee");
 				System.out.println("Enter 12 Avg of employee Salary");
@@ -112,16 +108,16 @@ class EmployeeM {
 				if (choice == 3) {
 					System.out.println("Enter name which you want to search");
 					String name = sc.next();
-					boolean flag = true;
+					boolean k = true;
 					for (int i = 0; i < emp.length; i++) {
 						if (emp[i].getName().equalsIgnoreCase(name)) {
 							System.out.println("Employee Found " + emp[i].toString());
-							flag = false;
+							k = false;
 							break;
 
 						}
 					}
-					if (flag) {
+					if (k) {
 						System.out.println("Record not Found");
 					}
 
@@ -150,7 +146,71 @@ class EmployeeM {
 				if (choice == 5) {
 					break;
 				}
+				if (choice == 6) {
+					Namecomparator namesort = new Namecomparator();
+					System.out.println("Before Sorting by name: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					Arrays.sort(emp, namesort);
+					System.out.println("After Sorting by name: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					
+				}
 				if (choice == 7) {
+					Comparator<EmployeeM> descnamesort = Collections.reverseOrder(new Namecomparator());
+					System.out.println("Before Sorting by name: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					Arrays.sort(emp, descnamesort);
+					System.out.println("After Sorting by name: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+				}
+				if (choice == 8) {
+					SalaryComparator salarysort = new SalaryComparator();
+					System.out.println("Before Sorting by salary: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					Arrays.sort(emp, salarysort);
+					System.out.println("After Sorting by salary: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					
+				}
+				if (choice == 9) {
+					Comparator<EmployeeM> descsalarysort = Collections.reverseOrder(new SalaryComparator());
+					System.out.println("Before Sorting by salary: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
+					Arrays.sort(emp, descsalarysort);
+					System.out.println("After Sorting by salary: ");
+					for (int i = 0; i < emp.length; i++) {
+						if (emp[i].getiD() != 0) {
+							System.out.println(emp[i]);
+						}
+					}
 					
 				}
 				if (choice == 10) {
@@ -205,4 +265,4 @@ class EmployeeM {
 	}
 }
 
-}
+
