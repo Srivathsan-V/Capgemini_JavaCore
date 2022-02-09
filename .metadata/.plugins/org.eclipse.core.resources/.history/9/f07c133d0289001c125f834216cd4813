@@ -109,7 +109,6 @@ public class MorelambdaPrograms {
 			System.out.println("The Sum of the elements in an array is: "+sum);
 			System.out.println("The Sum of the elements in an array is: "+avg);
 		 };
-		 //to find average
 		 an.averagenum(array1);
 		 
 		 System.out.println("Enter the size of array:");
