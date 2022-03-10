@@ -21,7 +21,8 @@ public class MyStream {
 		
 		//working of filter method
 		List<Integer> filterlist = new ArrayList<Integer>();
-		filterlist = numlist.stream().filter(n->n>20).collect(Collectors.toList());
+		long c = numlist.stream().filter(n->n == 60).count();
+		System.out.println(c);
 		System.out.println("Filtered List: "+filterlist);
 		
 		//working of map method
@@ -29,8 +30,8 @@ public class MyStream {
 		System.out.println("Map Demo: "+maplist);
 		
 		//returns the number of element in stream
-		long c = numlist.stream().count();
-		System.out.println(c);
+		long c1 = numlist.stream().count();
+		System.out.println(c1);
 		
 
 		System.out.println("max" +numlist.stream().min(Collections.reverseOrder()));

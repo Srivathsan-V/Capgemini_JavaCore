@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean id="User" class="FinancialProductsReviewApp.User">
+ <property name="username" value="srivathsan"></property>
+ <property name="emailid" value="srivathsan@gmail.com"></property>
+ <property name="password" value="pass@123"></property>
+ <property name="mobileno" value="5678345895"></property>
+ </bean>
+ <bean id="comments" class="FinancialProductsReviewApp.Comment">
+ <property name="comment_id" value="101"></property>
+ <property name="comment_text" value="Good"></property>
+ <property name="Likes" value="100"></property>
+ <property name="Dislikes" value="10"></property>
+ <property name="report" value="false"></property>
+ </bean>
+ 
+ <bean id="reviews" class="FinancialProductsReviewApp.Review">
+ <property name="reviewid" value="101"></property>
+ <property name="review_text" value="Reviewed"></property>
+ <property name="financial_Product_reviewed" value="Reviewed"></property>
+ <property name="comments">
+ <list>
+ <ref bean="comments1"/>
+ <ref bean="comments2"/>
+ </list>
+ </property>
+ </bean>
+ 
+ <bean id="comments1" class="FinancialProductsReviewApp.Comment">
+ <property name="comment_id" value="102"></property>
+ <property name="comment_text" value="Good"></property>
+ <property name="Likes" value="70"></property>
+ <property name="Dislikes" value="7"></property>
+ <property name="report" value="True"></property>
+ </bean>
+ 
+ 
+ <bean id="comments2" class="FinancialProductsReviewApp.Comment">
+ <property name="comment_id" value="103"></property>
+ <property name="comment_text" value="Bad"></property>
+ <property name="Likes" value="10"></property>
+ <property name="Dislikes" value="5"></property>
+ <property name="report" value="True"></property>
+ </bean>
+ 
+ <bean id="fi" class="FinancialProductsReviewApp.FinancialProduct">
+ <property name="financial_productid" value="10"></property>
+ <property name="financial_product_name" value="mobile"></property>
+ <property name="description" value="High end mobile phone"></property>
+ <property name="rating" value="10"></property>
+ <property name="review">
+ <ref bean="reviews" />
+ </property>
+
+ 
+ </bean>
+ 
+ </beans>
+ 

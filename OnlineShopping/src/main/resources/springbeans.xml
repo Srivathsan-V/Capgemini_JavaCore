@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 
+<bean id="user" class="OnlineShopping.User">
+<property name="username" value="Srivathsan" />
+<property name="email" value="srivathsan@gmail.com" />
+<property name="password"  value="Srivathsan@18" />
+<property name="shipping_address"  value="madurai, TamilNadu" />
+<property name="billing_address"  value="Coimbatore" />
+</bean>
+
+<bean id="user1" class="OnlineShopping.User">
+<property name="username" value="Thomas" />
+<property name="email" value="Thomas@gmail.com" />
+<property name="password"  value="Thomas@23" />
+<property name="shipping_address"  value="Manchester, England" />
+<property name="billing_address"  value="Yorkshire" />
+</bean>
+
+<bean id="product" class="OnlineShopping.Product">
+<property name="product_name" value="Chocolates" />
+<property name="price" value="75.00" />
+<property name="quantity_in_stock"  value="550" />
+<property name="imagelocation"  value="xyz" />
+</bean>
+
+<bean id="product1" class="OnlineShopping.Product">
+<property name="product_name" value="Biscuits" />
+<property name="price" value="110.00" />
+<property name="quantity_in_stock"  value="1300" />
+<property name="imagelocation"  value="pqr" />
+</bean>
+
+<bean id="product2" class="OnlineShopping.Product">
+<property name="product_name" value="Cold Beverages" />
+<property name="price" value="170.00" />
+<property name="quantity_in_stock"  value="300" />
+<property name="imagelocation"  value="def" />
+</bean>
+
+<bean id="product3" class="OnlineShopping.Product">
+<property name="product_name" value="Chips" />
+<property name="price" value="35.00" />
+<property name="quantity_in_stock"  value="1000" />
+<property name="imagelocation"  value="lmn" />
+</bean>
+
+<bean id="cart" class="OnlineShopping.Cart">
+<constructor-arg ref="user"/>
+<property name="total_amount" value="10500.00" />
+<property name="Status" value="true" />
+<property name="ConfirmOrder" value="true"/>
+<property name="productList">
+<list>
+<ref bean="product"/>
+<ref bean="product1"/>
+<ref bean="product2"/>
+<ref bean="product3"/>
+</list>
+</property>
+</bean>
+
+<bean id="cart1" class="OnlineShopping.Cart">
+<constructor-arg ref="user1"/>
+<property name="total_amount" value="10500.00" />
+<property name="Status" value="true" />
+<property name="ConfirmOrder" value="true"/>
+<property name="productList">
+<list>
+<ref bean="product"/>
+<ref bean="product1"/>
+<ref bean="product2"/>
+<ref bean="product3"/>
+</list>
+</property>
+</bean>
+
+
+<bean id="order" class="OnlineShopping.Order">
+	<property name="cartList">
+	<list>
+		<ref bean="cart"/>
+		<ref bean="cart1"/>
+	</list>
+	</property>
+</bean>
+
+</beans>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="employee" class="EmployeeTaskSystem.Employee">
+	<property name="employeeid" value="101"/>
+	<property name="employee_name" value="Srivathsan"/>
+	<property name="department" value="Development"/>
+	<property name="designation" value="Analyst Programmer"/>
+	<property name="password" value="Srivathsan@18"/>
+	<property name="superior">
+ <ref bean="employee1" />
+ </property>
+	<property name="employee_rating" value="EXCELLENT" />
+	<property name="tasklist">
+		<list>
+			<ref bean="task"/>
+			<ref bean="task1"/>
+			<ref bean="task2"/>
+		</list>
+	</property>
+	<property name="attendance_list">
+		<list>
+			<ref bean="attendance"/>
+			<ref bean="attendance1"/>
+			<ref bean="attendance2"/>
+		</list>
+	</property>
+</bean>
+
+<bean id="employee1" class="EmployeeTaskSystem.Employee">
+	<property name="employeeid" value="102"/>
+	<property name="employee_name" value="Andrew"/>
+	<property name="department" value="Development"/>
+	<property name="designation" value="Team Lead"/>
+	<property name="password" value="Andrew@123"/>
+	<property name="employee_rating" value="EXCELLENT" />
+</bean>
+
+<bean id="attendance" class="EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="01"/>
+	<property name="attendanceDate" value="03/10/2022 09:00:00"/>
+	<property name="Status" value="PRESENT"/>
+</bean>
+
+<bean id="attendance1" class="EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="02"/>
+	<property name="attendanceDate" value="03/11/2022 09:00:00"/>
+	<property name="Status" value="ABSENT"/>
+</bean>
+
+<bean id="attendance2" class="EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="03"/>
+	<property name="attendanceDate" value="03/22/2022 09:00:00"/>
+	<property name="Status" value="LEAVE"/>
+</bean>
+
+<bean id="task" class="EmployeeTaskSystem.Task">
+	<property name="taskid" value="1001"/>
+	<property name="taskname" value="PQR"/>
+	<property name="task_description" value="It has to completed in two weeks"/>
+	<property name="date_of_allocation" value="03/11/2022 01:30:00" />
+	<property name="deadline" value="03/25/2022 02:30:00" />
+	<property name="allocated_to" ref="employee"/>
+</bean>
+
+<bean id="task1" class="EmployeeTaskSystem.Task">
+	<property name="taskid" value="1002"/>
+	<property name="taskname" value="GHI"/>
+	<property name="task_description" value="It has to be completed in two days"/>
+	<property name="date_of_allocation" value="03/11/2022 09:30:00" />
+	<property name="deadline" value="03/14/2022 06:00:00" />
+	<property name="allocated_to" ref="employee1"/>
+</bean>
+
+<bean id="task2" class="EmployeeTaskSystem.Task">
+	<property name="taskid" value="1003"/>
+	<property name="taskname" value="JKL"/>
+	<property name="task_description" value="Completed"/>
+	<property name="date_of_allocation" value="03/10/2022 01:30:00" />
+	<property name="deadline" value="03/15/2022 02:30:00" />
+	<property name="allocated_to" ref="employee"/>
+</bean>
+</beans>
